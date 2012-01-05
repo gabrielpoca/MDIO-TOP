@@ -1,0 +1,60 @@
+\documentclass[a4paper]{article}
+\usepackage[portuges]{babel}
+\usepackage[latin1]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{fancyvrb}
+\usepackage{url}
+
+\usepackage{aeguill}  % usefull for pdflatex
+%\usepackage[compat2,twosideshift=0mm,left=20mm,right=20mm,bottom=20mm,top=15mm]{geometry}
+
+\usepackage{algorithmic}
+
+\parindent=2em
+
+
+\title{Projecto (Integrado) de xxx\\ Relatório da Fase xx\\ Grupo yyyy}
+\author{Gabriel Poça (56974) \and Autor2 (número) \and Autor3 (número)}
+\date{\today}
+
+\begin{document}
+
+\maketitle
+
+\begin{abstract}
+
+\end{abstract}
+
+\parskip=0mm
+%\tableofcontents
+\parskip=2mm
+
+\section{Exercicio 3}
+Pseudo código.
+
+\begin{algorithmic}
+\STATE $graph =$ Array com todos os vértices. 
+\STATE $dMax =$ Valor da distância máxima que cada veiculo pode percorrer.
+\STATE $paths\gets$ Caminhos mais curtos a partir de $graph$ e $dMax$.
+\WHILE{Existir vertices não visitados por analisar}
+	\STATE $bestV \gets$ Vértice de maior lucro não visitado.	
+	\FOR{$path : paths$ (para todos os percursos)}	
+		\FOR{$v : path$ (para todos os vértices do percurso)}	
+			\IF{$vb$ melhor que $v$ (no sentido em que apresenta maior lucro)}	
+				\STATE Trocar o $v$ por $vb$.	
+				\IF{Solução inválida}	
+					\STATE Repor $v$.	
+				\ENDIF	
+			\ENDIF	
+		\ENDFOR	
+	\ENDFOR	
+\ENDWHILE
+
+\end{algorithmic}
+
+\section{Conclusões}
+
+\appendix
+\section{Código do Programa}
+
+\end{document}
