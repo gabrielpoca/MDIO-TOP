@@ -9,12 +9,17 @@
 %\usepackage[compat2,twosideshift=0mm,left=20mm,right=20mm,bottom=20mm,top=15mm]{geometry}
 
 \usepackage{algorithmic}
+\usepackage{algorithm}
+\usepackage{float}
+\usepackage{verbatim}
+
 
 \parindent=2em
 
 
-\title{Projecto (Integrado) de xxx\\ Relatório da Fase xx\\ Grupo yyyy}
-\author{Gabriel Poça (56974) \and Autor2 (número) \and Autor3 (número)}
+\title{MDIO}
+\author{Gabriel Poça \and Pedro Nunes \and Sofia Vieira}
+
 \date{\today}
 
 \begin{document}
@@ -29,9 +34,31 @@
 %\tableofcontents
 \parskip=2mm
 
-\section{Exercicio 3}
-Pseudo código.
 
+
+\section{Exercicio 2} { 
+
+	$\sum_{ i=0 }^n\sum_{ j=0 }^n\sum_{ k=0 }^m Lj * x_{ijk}$ \\ \\
+	\textit{s.a:} \\ \\
+	$\sum_{ i=0 }^n\sum_{ k=1 }^m x_{ijk} = 1 				\hfill j=0,\ldots,n$ \\ \\
+	$\sum_{ i=0 }^nXipk  = \sum_{ j=0 }^n x_{pjk} 			\hfill p=0,\ldots,n \qquad k=1,\ldots,m$ \\ \\
+	$\sum_{ i=0 }^n\sum_{ j=0 }^n t_{ij} * x_{ijk} <= Tmax 	\hfill k=1,\ldots,m$ \\ \\
+	$\sum_{ i=1 }^{n-1} x_{ 0ik } = 1							\hfill k=1,\ldots,m$ \\ \\
+	$\sum_{ i=1 }^{n-1} x_{ ink } = 1							\hfill k=1,\ldots,m$ \\ \\
+	
+	\begin{verbatim}
+/* Função Objectivo */
+max: 10 e2 + 5 e3 + 5 e4 + 10 e5 + 15 e6 + 15 e7 + 15 e8 + 10 e9; 
+	\end{verbatim}
+}
+
+\section{Exercicio 3}
+O pseudo código na Figura~\ref{pseudocodigo} representa uma possivél solução para um problema TOP.
+
+\begin{algorithm}                     
+\floatname{algorithm}{Algoritmo}
+\caption{Pseudo código para o exercício 3.}        
+\label{pseudocodigo}    
 \begin{algorithmic}
 \STATE $graph =$ Array com todos os vértices. 
 \STATE $dMax =$ Valor da distância máxima que cada veiculo pode percorrer.
@@ -44,17 +71,19 @@ Pseudo código.
 				\STATE Trocar o $v$ por $vb$.	
 				\IF{Solução inválida}	
 					\STATE Repor $v$.	
+				\ELSE
+					\STATE Terminar procura e passar ao vértice seguinte.
 				\ENDIF	
 			\ENDIF	
 		\ENDFOR	
 	\ENDFOR	
 \ENDWHILE
-
 \end{algorithmic}
+\end{algorithm}
 
-\section{Conclusões}
+%\section{Conclusões}
 
 \appendix
-\section{Código do Programa}
+%\section{Código do Programa}
 
 \end{document}
