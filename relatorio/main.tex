@@ -13,9 +13,7 @@
 \usepackage{float}
 \usepackage{verbatim}
 
-
 \parindent=2em
-
 
 \title{MDIO}
 \author{Gabriel Poça \and Pedro Nunes \and Sofia Vieira}
@@ -66,7 +64,7 @@
 
 
 \section{Exercicio 3}
-O pseudo código na Figura~\ref{pseudocodigo} representa uma possivél solução para um problema TOP.
+O pseudo código na Figura~\ref{caminhoscurtos} representa um algoritmo para encontrar os caminhos com maior numero de vértices, sem repetidos, entre dois pontos.
 
 \begin{algorithm}[H]
 \floatname{algorithm}{Algoritmo}
@@ -93,10 +91,18 @@ O pseudo código na Figura~\ref{pseudocodigo} representa uma possivél solução par
 \end{algorithmic}
 \end{algorithm}
 
+Aplicado ao problema em enunciado optemos o seguinte resultado:
+\begin{enumerate}
+	\item caminhos
+\end{enumerate}
+
+\section{Exercicio 4}
+
+De forma a conseguir melhores resultados que no algoritmo na Figura~\ref{caminhoscurtos} podemos acrescentar outra etapa de processamento. Deste modo depois de determinados os percursos no algoritmo anterior tenta-se substituir os vértices de maior prémio não visitados por visitados, um a um, para todos os percursos, sem nunca ultrapassar o limite de distância máxima para cada percurso e deste modo aumentar o lucro. O pseudo código encontra-se na Figura~\ref{impr} 
 \begin{algorithm}[H]                  
 \floatname{algorithm}{Algoritmo}
 \caption{Pseudo código para o exercício 3.}        
-\label{pseudocodigo}    
+\label{impr}    
 \begin{algorithmic}
 \STATE $graph =$ Array com todos os vértices. 
 \STATE $dMax =$ Valor da distância máxima que cada viatura pode percorrer.
