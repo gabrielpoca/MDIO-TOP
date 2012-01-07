@@ -12,6 +12,7 @@
 \usepackage{algorithm}
 \usepackage{float}
 \usepackage{verbatim}
+\usepackage{indentfirst}
 
 \parindent=2em
 
@@ -33,9 +34,14 @@
 \parskip=2mm
 
 
+\section{Introdução}
+	Este relatório é composto por cinco secções, incluindo esta, sendo que cada uma das seguintes corresponde aos quatro primeiros exercicios em enunciado respectivamente. Por questões de apresentação e simplicidade determinada informação, componente de alguns exercicios, encontra-se em outros documentos, como tal este relatório é acompanhado de um documento denominado \textit{ex2.lp}, onde consta código para o lp\_solve correspondente ao exercicio 2, e outro documento denominado \textit{resumo.pdf} onde consta um documento que contém o resumo para o exercicio 1.
 
-\section{Exercicio 2} { 
-	No exercicio 2. deve considerar-se uma sub-instância do problema original e uma frota de duas viaturas e establecer um modelo de Programação Linear que permita encontrar a solução óptima.
+\section{Exercicio 1}
+	Como consta na introdução o resumo encontra-se em outro documento denominado \textit{resumo.pdf}. O artigo de base ao resumo tem por titulo "Ants can solve the team orienteering problem" e é da autoria de \textit{Liangjun Ke}, \textit{Claudia Archetti} e \textit{Claudia Archetti}\footnote{http://www.sciencedirect.com/science/article/pii/S360835207002162}. Neste artigo
+	
+\section{Exercicio 2}  
+	No exercicio 2 deve-se, considerando uma sub-instância do problema original e uma frota de duas viaturas, establecer um modelo de Programação Linear que permita encontrar a solução óptima.
 	Consideremos as seguintes variáveis:
 	\begin{description}
 	\item[\rm $n$] Numero de vértices a visitar, sendo que o vértice $0$ representa o vértice inicial e o vértice $n$ o final.
@@ -58,13 +64,13 @@
 	\item $\sum_{ i=1 }^{n-1} x_{ ink } = 1							\hfill k=1,\ldots,m$ \\ 
 	\end{enumerate}
 
-	A restrição 1. garante que apenas uma das viaturas pode visitar um ponto. A restrição 2. garante que existe, para cada viatura, um percurso de saida de cada vertice visitado para outro vertice. A restrição em 3. garante que é respeitado um limite máximo de distância percorrida para cada viatura. As restrições em 4. e 5. garantem que uma viatura deve ser 'sair' do vertice inicial e terminar no vértice final. 
+	A restrição 1 garante que apenas uma das viaturas pode visitar um ponto. A restrição 2 garante que existe, para cada viatura, um percurso de saida de cada vertice visitado para outro vertice. A restrição em 3 garante que é respeitado um limite máximo de distância percorrida para cada viatura. As restrições em 4 e 5 garantem que uma viatura deve ser 'sair' do vertice inicial e terminar no vértice final. 
 
-	Este relatório é acompanhado de um documento denominado \textit{ex2.lp} onde se encontra o código para o lp\_solve.
+	Este relatório é acompanhado de um documento denominado \textit{ex2.lp} onde se encontra o código para o lp\_solve que prova a solução proposta.
 
 
 \section{Exercicio 3}
-O pseudo código na Figura~\ref{caminhoscurtos} representa um algoritmo para encontrar os caminhos com maior numero de vértices, sem repetidos, entre dois pontos.
+O pseudo código na Figura~\ref{caminhoscurtos} consiste num algoritmo que permite encontrar os percursos com maior numero de vértices, sem repetidos, entre dois pontos.
 
 \begin{algorithm}[H]
 \floatname{algorithm}{Algoritmo}
@@ -90,11 +96,15 @@ O pseudo código na Figura~\ref{caminhoscurtos} representa um algoritmo para enco
 	\ENDFOR
 \end{algorithmic}
 \end{algorithm}
-
-Aplicado ao problema em enunciado optemos o seguinte resultado:
+Aplicado ao problema em enunciado optemos os seguintes percursos:
 \begin{enumerate}
-	\item caminhos
+	\item 1 -> 28 -> 18 -> 6 -> 7 -> 3 -> 32
+	\item 1 -> 19 -> 20 -> 27 -> 31 -> 22 -> 32
+	\item 1 -> 13 -> 9 -> 8 -> 10 -> 11 -> 12 -> 21 -> 32
+	\item 1 -> 17 -> 29 -> 32
 \end{enumerate}
+
+Deste modo obtemos um \textbf{Lucro Total} de \textbf{150}.
 
 \section{Exercicio 4}
 
@@ -125,8 +135,14 @@ De forma a conseguir melhores resultados que no algoritmo na Figura~\ref{caminho
 \end{algorithmic}
 \end{algorithm}
 
-%\section{Conclusões}
+Podemos considerar que em caso de empate o melhor vértice é escolhido de forma aleatória, tal como o primeiro percurso onde se procura a substituição. Este seria um dos pontos a melhorar. É também de notar que não se especifica um caso de paragem, para tal pode propor-se duas soluções:
+\begin{itemize}
+	\item O algoritmo itera sobre todos os vértices "livres" terminando quando deixa de se registar alterações nos percursos.
+	\item O algoritmo itera sobre todos os vértices livres marcando os visitados e termina após análise de todos.
+\end{itemize}
+A desição acaba por apenas influenciar o numero de vezes que o ciclo é executado.
 
+Sendo este algortimo moroso realizamos apenas uma primeira iteração: o vértice selecionado foi o 15 e o percurso o 4 sendo a troca realizada com o vértice 29. Deste modo o \textbf{Lucro Total} aumenta de 150 para \textbf{155}. Mais iterações acarrentam melhores resultados.
 \appendix
 %\section{Código do Programa}
 
